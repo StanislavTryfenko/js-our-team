@@ -75,3 +75,27 @@ function list(name, role, image) {
     document.getElementById('team_list').appendChild(li);
 }
 
+
+/* BONUS 1:
+trasformare la stringa foto in una immagine effettiva       ASSIEME, SINGOLI SONO TROPPO SEMPLICI :(
+BONUS 2:
+organizzare i singoli membri in card/schede */
+
+
+team.forEach(team => card(team.name, team.role, team.image));
+
+function card(name, role, image) {
+    
+    const card = `
+                    <div class="col-4">
+                    <div class="card" style="width: 18rem;">
+                    <img src="./assets/img/${image}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">${name}</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">${role}</h6>
+                    </div>
+                    </div>
+                    </div>`
+
+    document.getElementById('cardbox').innerHTML += card
+}
