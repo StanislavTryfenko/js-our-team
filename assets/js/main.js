@@ -58,3 +58,20 @@ team.forEach(team => log(team.name, team.role, team.image));
 function log(name, role, image) {
     console.log(name, role, image);
 }
+
+//MILESTONE 2:
+//stampare le stesse informazioni su DOM sottoforma di stringhe
+
+team.forEach(team => list(team.name, team.role, team.image));
+
+function list(name, role, image) {
+
+    const li = document.createElement('li');
+    
+    const liText = document.createTextNode(name + " " + role + " " + image);
+
+    li.appendChild(liText);
+
+    document.getElementById('team_list').appendChild(li);
+}
+
